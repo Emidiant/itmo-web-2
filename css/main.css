@@ -34,7 +34,7 @@ h1 {
     font-weight: normal;
 }
 
-.update_button {
+.update-button {
     display: inline-block;
     background-color: #C7D2D8;
     color: #698084;
@@ -46,7 +46,7 @@ h1 {
     position: relative;
 }
 
-.update_button:hover {
+.update-button:hover {
     background-color: #A5AFB1;
     cursor: pointer;
 }
@@ -54,4 +54,107 @@ h1 {
 main h2 {
     color: #698084;
     font-weight: inherit;
+}
+
+.weather-data {
+    /*width: 40%;*/
+
+    border: 1px solid blueviolet;
+}
+
+.weather-data p {
+    font-weight: lighter;
+    color: #F0FBFF;
+    background-color: #A5AFB1;
+    height: 20px;
+    margin: 5px;
+    padding: 5px 10px 5px 10px;
+    vertical-align: center;
+    text-align: right;
+}
+
+.weather-data .bold {
+    font-weight: bold;
+    float: left;
+}
+
+.current-city {
+    width: 40%;
+
+    border: 1px solid rosybrown;
+}
+
+.favorites-header {
+    display: flex;
+    justify-content: space-between;
+
+    border: 1px solid goldenrod;
+}
+
+.new-city {
+    border: 1px solid cornflowerblue;
+}
+
+.favorites-header input {
+    width: 160px;
+    height: 30px;
+    border: none;
+    background-color: #F1F1F1;
+}
+
+.favorites-header button{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: center;
+    width: 30px;
+    height: 30px;
+    background-color: #6C8189;
+    border-radius: 100%;
+    border: none;
+}
+
+.favorites-header button:hover {
+    background-color: #A5AFB1;
+    cursor: pointer;
+}
+
+.city {
+    /*width: 40%;*/
+    display: flex;
+    border: 1px solid cornflowerblue;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.city p {
+    color: #7A7A7A;
+    font-size: 24px;
+}
+
+.city button {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: center;
+    width: 30px;
+    height: 30px;
+    background-color: #6C8189;
+    border-radius: 100%;
+    border: none;
+}
+
+.city button:hover {
+    background-color: #A5AFB1;
+    cursor: pointer;
+}
+
+.city-weather {
+    border: 1px solid red;
+}
+
+.favorites-cities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
