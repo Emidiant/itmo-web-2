@@ -40,8 +40,6 @@ h1 {
     margin: 0 10px 0 10px;
 }
 
-
-
 h3 {
     color: #698084;
     font-weight: 600;
@@ -71,11 +69,7 @@ h3 {
     cursor: pointer;
 }
 
-.weather-data {
-    width: 370px;
 
-    /*border: 1px solid olivedrab;*/
-}
 
 .weather-data li{
     list-style-type: none;
@@ -87,12 +81,6 @@ h3 {
     padding: 5px 10px 5px 10px;
     vertical-align: center;
     text-align: right;
-}
-
-.weather-data .bold {
-    font-weight: bold;
-    float: left;
-    margin-right: 30px;
 }
 
 .weather-data b {
@@ -192,11 +180,22 @@ h3 {
     /*border: 1px solid brown;*/
 }
 
-.current-city {
+.current-city-data {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.current-city-data li {
     width: 370px;
+}
+
+.current-city {
     margin: 0 10px 0 10px;
 
-    border: 1px solid rosybrown;
+    /*border: 1px darkblue;*/
 }
 
 h2 {
@@ -205,7 +204,7 @@ h2 {
     font-size: 22pt;
     height: 20%;
 
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
 }
 
 .current-city ul{
@@ -214,7 +213,7 @@ h2 {
     list-style-type: none;
     justify-content: space-around;
 
-    border: 1px solid gold;
+    /*border: 1px solid gold;*/
 }
 
 .current-city img {
@@ -227,6 +226,41 @@ h2 {
     color: #7D7D7D;
 }
 
-.current-city + .weather-data {
+.current-weather-data{
+    width: 370px;
+
+
+    /*border: 1px solid dodgerblue;*/
+}
+
+.current-weather-data li{
+    width: 350px;
+    list-style-type: none;
+    font-weight: lighter;
+    color: #F0FBFF;
+    background-color: #A5AFB1;
+    height: 20px;
+    margin: 5px 0 5px 0;
+    padding: 5px 10px 5px 10px;
+    vertical-align: center;
+    text-align: right;
+}
+
+.current-weather-data b {
+    font-weight: bold;
+    float: left;
+    margin-right: 30px;
+}
+
+.weather-data {
+    width: 370px;
+    /*border: 1px solid olivedrab;*/
+}
+
+.current-city-li {
     margin: 0 10px 0 10px;
 }
+
+/*.favorites-cities li:last-child{*/
+/*    justify-content: space-evenly;*/
+/*}*/
