@@ -21,10 +21,12 @@ body {
 
 header {
     display: flex;
+    flex-wrap: wrap;
     /*flex-direction: row;*/
-    justify-content: normal;
+    justify-content: space-around;
     align-items: center;
-    margin: 20px 39px 20px 39px;
+    margin: 20px 0 20px 0;
+
     /*border: 1px solid brown;*/
 }
 
@@ -32,6 +34,24 @@ h1 {
     color: #698084;
     /*display: inline-block;*/
     font-weight: normal;
+
+    /*border: 1px solid burlywood;*/
+    width: 370px;
+    margin: 0 10px 0 10px;
+}
+
+
+
+h3 {
+    color: #698084;
+    font-weight: 600;
+    font-size: 18pt;
+}
+
+.update {
+    /*border: 1px solid rosybrown;*/
+    width: 370px;
+    margin: 0 10px 0 10px;
 }
 
 .update-button {
@@ -51,9 +71,10 @@ h1 {
     cursor: pointer;
 }
 
-main h2 {
-    color: #698084;
-    font-weight: inherit;
+.weather-data {
+    width: 370px;
+
+    /*border: 1px solid olivedrab;*/
 }
 
 .weather-data li{
@@ -62,11 +83,10 @@ main h2 {
     color: #F0FBFF;
     background-color: #A5AFB1;
     height: 20px;
-    margin: 5px;
+    margin: 5px 0 5px 0;
     padding: 5px 10px 5px 10px;
     vertical-align: center;
     text-align: right;
-    /*border: 1px solid blueviolet;*/
 }
 
 .weather-data .bold {
@@ -81,22 +101,20 @@ main h2 {
     margin-right: 30px;
 }
 
-.current-city {
-    width: 380px;
-
-    border: 1px solid rosybrown;
-}
-
 .favorites-header {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 39px 20px 39px;
+    justify-content: space-around;
+    margin: 20px 0 20px 0;
 
-    border: 1px solid goldenrod;
+    /*border: 1px solid goldenrod;*/
 }
 
 .new-city {
+    text-align: right;
+    width: 370px;
+    margin: 0 10px 0 10px;
+
     /*border: 1px solid cornflowerblue;*/
 }
 
@@ -159,7 +177,9 @@ main h2 {
 
 .favorites-cities > li {
     list-style-type: none;
-    margin-bottom: 30px;
+    margin: 0 10px 30px 10px;
+    width: 370px;
+
     /*border: 1px solid red;*/
 }
 
@@ -168,5 +188,45 @@ main h2 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
+
+    /*border: 1px solid brown;*/
 }
 
+.current-city {
+    width: 370px;
+    margin: 0 10px 0 10px;
+
+    border: 1px solid rosybrown;
+}
+
+h2 {
+    color: #698084;
+    font-weight: 600;
+    font-size: 22pt;
+    height: 20%;
+
+    border: 1px solid blue;
+}
+
+.current-city ul{
+    display: flex;
+    height: 80%;
+    list-style-type: none;
+    justify-content: space-around;
+
+    border: 1px solid gold;
+}
+
+.current-city img {
+    align-self: flex-end;
+}
+
+.current-temp {
+    align-self: flex-end;
+    font-size: 60pt;
+    color: #7D7D7D;
+}
+
+.current-city + .weather-data {
+    margin: 0 10px 0 10px;
+}

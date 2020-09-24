@@ -8,14 +8,16 @@
 <body>
 <header>
     <h1>Погода здесь</h1>
-    <button class="update-button">Обновить геолокацию</button>
+    <div class="update"><button class="update-button">Обновить геолокацию</button></div>
 </header>
 <main>
     <div class="favorites-cities">
         <div class="current-city">
             <h2>Saint Petersburg</h2>
-            <img src="images/icon-clouds.png" alt="cloudy">
-            <p>8&degC</p>
+            <ul>
+                <li><img src="images/icon-clouds.png" alt="cloudy"></li>
+                <li><span class="current-temp">8&degC</span></li>
+            </ul>
         </div>
         <ul class="weather-data">
             <li><b>Ветер</b> Moderate breeze, 6.0 m/s, North-northwest</li>
@@ -39,7 +41,7 @@
     <ul class="favorites-cities">
         <li>
             <div class="city">
-                <h2>Moscow</h2>
+                <h3>Moscow</h3>
                 <p>5&degC</p>
                 <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
                 <button>&#65794</button>
@@ -54,7 +56,7 @@
         </li>
         <li>
             <div class="city">
-                <h2>Helsinki</h2>
+                <h3>Helsinki</h3>
                 <p>3&degC</p>
                 <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
                 <button>&#65794</button>
@@ -69,7 +71,7 @@
         </li>
         <li>
             <div class="city">
-                <h2>Moscow</h2>
+                <h3>Moscow</h3>
                 <p>5&degC</p>
                 <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
                 <button>&#65794</button>
@@ -84,12 +86,12 @@
         </li>
         <li>
             <div class="city">
-                <h2>Helsinki</h2>
+                <h3>Helsinki</h3>
                 <p>3&degC</p>
                 <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
                 <button>&#65794</button>
             </div>
-            <<ul class="weather-data">
+            <ul class="weather-data">
             <li><b>Ветер</b> Moderate breeze, 6.0 m/s, North-northwest</li>
             <li><b>Облачность</b> Broken clouds</li>
             <li><b>Давление</b> 1013 hpa</li>
