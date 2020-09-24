@@ -10,7 +10,7 @@ body {
     width: 70%;
     padding: 30px;
 
-    border: 1px solid coral;
+    /*border: 1px solid coral;*/
 }
 
 * {
@@ -25,7 +25,7 @@ header {
     justify-content: normal;
     align-items: center;
     margin: 20px 39px 20px 39px;
-    border: 1px solid brown;
+    /*border: 1px solid brown;*/
 }
 
 h1 {
@@ -56,11 +56,8 @@ main h2 {
     font-weight: inherit;
 }
 
-.weather-data {
-    border: 1px solid blueviolet;
-}
-
-.weather-data p {
+.weather-data li{
+    list-style-type: none;
     font-weight: lighter;
     color: #F0FBFF;
     background-color: #A5AFB1;
@@ -69,9 +66,16 @@ main h2 {
     padding: 5px 10px 5px 10px;
     vertical-align: center;
     text-align: right;
+    /*border: 1px solid blueviolet;*/
 }
 
 .weather-data .bold {
+    font-weight: bold;
+    float: left;
+    margin-right: 30px;
+}
+
+.weather-data b {
     font-weight: bold;
     float: left;
     margin-right: 30px;
@@ -85,6 +89,7 @@ main h2 {
 
 .favorites-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px 39px 20px 39px;
 
@@ -124,9 +129,10 @@ main h2 {
 
 .city {
     display: flex;
-    border: 1px solid cornflowerblue;
     justify-content: space-between;
     align-items: center;
+
+    /*border: 1px solid cornflowerblue;*/
 }
 
 .city p {
@@ -151,9 +157,10 @@ main h2 {
     cursor: pointer;
 }
 
-.city-weather {
+.favorites-cities > li {
+    list-style-type: none;
     margin-bottom: 30px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 .favorites-cities {
@@ -162,3 +169,4 @@ main h2 {
     justify-content: space-around;
     align-content: space-around;
 }
+
