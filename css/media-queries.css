@@ -117,14 +117,16 @@
     }
 
 
-    .icon {
+    .update-button {
+
+        color: #C7D2D8;
         background-image: url("../images/100.png");
         padding-left : 32px;
         padding-top : 10px;
         padding-bottom : 10px;
         background-repeat : no-repeat;
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
     }
 
     .current-city img {
