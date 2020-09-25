@@ -4,12 +4,13 @@ body, html{
     font-family: "Times New Roman", serif;
     margin-left: auto;
     margin-right: auto;
+
+    font-size: 10pt;
 }
 
 body {
-    width: 70%;
+    width: 1000px;
     padding: 30px;
-
     /*border: 1px solid coral;*/
 }
 
@@ -30,26 +31,33 @@ header {
     /*border: 1px solid brown;*/
 }
 
+main {
+    /*border: 1px solid dodgerblue;*/
+}
+
 h1 {
+    font-size: 2.4rem;
     color: #698084;
     /*display: inline-block;*/
     font-weight: normal;
-
-    /*border: 1px solid burlywood;*/
     width: 370px;
     margin: 0 10px 0 10px;
+
+    /*border: 1px solid burlywood;*/
 }
 
 h3 {
     color: #698084;
     font-weight: 600;
-    font-size: 18pt;
+    font-size: 2rem;
 }
 
 .update {
     /*border: 1px solid rosybrown;*/
     width: 370px;
+    height: 50px;
     margin: 0 10px 0 10px;
+    /*border: 1px solid burlywood;*/
 }
 
 .update-button {
@@ -62,6 +70,7 @@ h3 {
     height: 50px;
     text-decoration: none;
     position: relative;
+
 }
 
 .update-button:hover {
@@ -69,11 +78,10 @@ h3 {
     cursor: pointer;
 }
 
-
-
 .weather-data li{
     list-style-type: none;
     font-weight: lighter;
+    font-size: 1.2rem;
     color: #F0FBFF;
     background-color: #A5AFB1;
     height: 20px;
@@ -84,6 +92,7 @@ h3 {
 }
 
 .weather-data b {
+    font-size: 1.2rem;
     font-weight: bold;
     float: left;
     margin-right: 30px;
@@ -107,6 +116,7 @@ h3 {
 }
 
 .favorites-header input {
+    font-size: 1rem;
     padding: 10px;
     color: #698084;
     width: 220px;
@@ -118,7 +128,7 @@ h3 {
 
 .favorites-header button{
     color: white;
-    font-size: 18px;
+    font-size: 1.8rem;
     text-align: center;
     vertical-align: center;
     width: 30px;
@@ -143,12 +153,12 @@ h3 {
 
 .city p {
     color: #7A7A7A;
-    font-size: 24px;
+    font-size: 2.6rem;
 }
 
 .city button {
     color: white;
-    font-size: 16px;
+    font-size: 1.6rem;
     text-align: center;
     vertical-align: center;
     width: 30px;
@@ -201,7 +211,7 @@ h3 {
 h2 {
     color: #698084;
     font-weight: 600;
-    font-size: 22pt;
+    font-size: 2.4rem;
     height: 20%;
 
     /*border: 1px solid blue;*/
@@ -211,26 +221,37 @@ h2 {
     display: flex;
     height: 80%;
     list-style-type: none;
-    justify-content: space-around;
+    justify-content: center;
+    /*border: 1px solid gold;*/
+}
 
+.current-city ul li{
+    display: flex;
+    justify-content: center;
     /*border: 1px solid gold;*/
 }
 
 .current-city img {
     align-self: flex-end;
+    justify-content: center;
+
+    /*border: 1px solid red;*/
+}
+
+.current-city span {
+    align-self: center;
+
+    /*border: 1px solid blue;*/
 }
 
 .current-temp {
-    align-self: flex-end;
-    font-size: 60pt;
+    align-self: center;
+    font-size: 6rem;
     color: #7D7D7D;
 }
 
 .current-weather-data{
     width: 370px;
-
-
-    /*border: 1px solid dodgerblue;*/
 }
 
 .current-weather-data li{
@@ -239,6 +260,7 @@ h2 {
     font-weight: lighter;
     color: #F0FBFF;
     background-color: #A5AFB1;
+    font-size: 1.2rem;
     height: 20px;
     margin: 5px 0 5px 0;
     padding: 5px 10px 5px 10px;
@@ -249,6 +271,7 @@ h2 {
 .current-weather-data b {
     font-weight: bold;
     float: left;
+    font-size: 1.2rem;
     margin-right: 30px;
 }
 
