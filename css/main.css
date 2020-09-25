@@ -228,12 +228,14 @@ h2 {
 .current-city ul li{
     display: flex;
     justify-content: center;
+    align-items: center;
     /*border: 1px solid gold;*/
 }
 
 .current-city img {
-    align-self: flex-end;
     justify-content: center;
+    width: 100px;
+    height: 100px;
 
     /*border: 1px solid red;*/
 }
