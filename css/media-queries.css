@@ -116,10 +116,12 @@
         width: 80%;
     }
 
+    .update-button span {
+        display: none;
+    }
+
 
     .update-button {
-
-        color: #C7D2D8;
         background-image: url("../images/100.png");
         padding-left : 32px;
         padding-top : 10px;
