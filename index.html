@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Погода</title>
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href="css/media-queries.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
     <h1>Погода здесь</h1>
-    <div class="update"><button class="update-button">Обновить геолокацию</button></div>
+    <div class="update"><button class="update-button">Обновить геологацию</button></div>
 </header>
 <main>
     <ul class="current-city-data">
@@ -31,6 +33,7 @@
     </ul>
 
 
+
     <div class="favorites-header">
         <h1>Избранное</h1>
         <div class="new-city">
@@ -40,7 +43,7 @@
 
     </div>
 
-    <ul class="favorites-cities">
+    <ul class="favorites-cities" id="favorites">
         <li>
             <div class="city">
                 <h3>Moscow</h3>
@@ -116,8 +119,23 @@
                 <li><b>Координаты</b> [59.88, 30.42]</li>
             </ul>
         </li>
-        <li></li>
     </ul>
+
+    <script>
+        let ul = document.getElementById('favorites');
+        function getRowsCount() {
+            let count = ul.getElementsByTagName('li').length;
+            return count/6;
+        }
+        function liAppend(){
+            let li = document.createElement("li");
+            if (getRowsCount() % 2 != 0){
+                li.appendChild(document.createTextNode(""));
+                ul.appendChild(li);
+            }
+        }
+        liAppend()
+    </script>
 </main>
 
 <footer>
