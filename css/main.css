@@ -9,7 +9,7 @@ body, html{
 }
 
 body {
-    width: 1000px;
+    width: 900px;
     padding: 30px;
     /*border: 1px solid coral;*/
 }
@@ -31,7 +31,7 @@ header div{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 20px 0 20px 0;
 
@@ -120,7 +120,7 @@ h3 {
 .favorites-header {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 20px 0 20px 0;
 
     /*border: 1px solid goldenrod;*/
@@ -205,7 +205,7 @@ h3 {
 .favorites-cities {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: space-around;
 
     /*border: 1px solid brown;*/
@@ -215,7 +215,7 @@ h3 {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: space-around;
 }
 

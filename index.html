@@ -124,22 +124,6 @@
             </ul>
         </li>
     </ul>
-
-    <script>
-        let ul = document.getElementById('favorites');
-        function getRowsCount() {
-            let count = ul.getElementsByTagName('li').length;
-            return count/6;
-        }
-        function liAppend(){
-            let li = document.createElement("li");
-            if (getRowsCount() % 2 != 0){
-                li.appendChild(document.createTextNode(""));
-                ul.appendChild(li);
-            }
-        }
-        liAppend()
-    </script>
 </main>
 
 <footer>
