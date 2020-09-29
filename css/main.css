@@ -5,7 +5,7 @@ body, html{
     margin-left: auto;
     margin-right: auto;
 
-    font-size: 10pt;
+    font-size: 12px;
 }
 
 body {
@@ -198,13 +198,9 @@ h3 {
     align-content: space-around;
 }
 
-.current-city-data li {
-    width: 370px;
-}
-
 .current-city {
+    width: 370px;
     margin: 0 10px 0 10px;
-
     /*border: 1px darkblue;*/
 }
 
@@ -217,17 +213,12 @@ h2 {
     /*border: 1px solid blue;*/
 }
 
-.current-city ul{
+.current-city div{
     display: flex;
     height: 80%;
+    width: 80%;
     list-style-type: none;
-    justify-content: center;
-    /*border: 1px solid gold;*/
-}
-
-.current-city ul li{
-    display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     /*border: 1px solid gold;*/
 }
@@ -236,6 +227,7 @@ h2 {
     justify-content: center;
     width: 100px;
     height: 100px;
+    margin-right: 40px;
 
     /*border: 1px solid red;*/
 }
