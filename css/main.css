@@ -5,7 +5,7 @@ body, html{
     margin-left: auto;
     margin-right: auto;
 
-    font-size: 10pt;
+    font-size: 12px;
 }
 
 body {
@@ -19,11 +19,18 @@ body {
     padding: 0;
     outline: none;
 }
-
 header {
     display: flex;
+    flex-direction: column;
+}
+header h1 {
+    width: 100%;
+    text-align: center;
+}
+header div{
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    /*flex-direction: row;*/
     justify-content: space-around;
     align-items: center;
     margin: 20px 0 20px 0;
@@ -36,14 +43,26 @@ main {
 }
 
 h1 {
+    font-size: 2.8rem;
+    color: #698084;
+    /*border: 1px solid burlywood;*/
+}
+
+h2 {
     font-size: 2.4rem;
     color: #698084;
-    /*display: inline-block;*/
     font-weight: normal;
     width: 370px;
     margin: 0 10px 0 10px;
 
-    /*border: 1px solid burlywood;*/
+    /*border: 1px solid blue;*/
+}
+
+.current-city-h3{
+    color: #698084;
+    font-weight: 600;
+    font-size: 2.4rem;
+    height: 20%;
 }
 
 h3 {
@@ -53,10 +72,10 @@ h3 {
 }
 
 .update {
-    /*border: 1px solid rosybrown;*/
     width: 370px;
     height: 50px;
     margin: 0 10px 0 10px;
+    justify-content: flex-start;
     /*border: 1px solid burlywood;*/
 }
 
@@ -198,36 +217,20 @@ h3 {
     align-content: space-around;
 }
 
-.current-city-data li {
-    width: 370px;
-}
-
 .current-city {
+    width: 370px;
     margin: 0 10px 0 10px;
-
     /*border: 1px darkblue;*/
 }
 
-h2 {
-    color: #698084;
-    font-weight: 600;
-    font-size: 2.4rem;
-    height: 20%;
 
-    /*border: 1px solid blue;*/
-}
 
-.current-city ul{
+.current-city div{
     display: flex;
     height: 80%;
+    width: 80%;
     list-style-type: none;
-    justify-content: center;
-    /*border: 1px solid gold;*/
-}
-
-.current-city ul li{
-    display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     /*border: 1px solid gold;*/
 }
@@ -236,6 +239,7 @@ h2 {
     justify-content: center;
     width: 100px;
     height: 100px;
+    margin-right: 40px;
 
     /*border: 1px solid red;*/
 }
