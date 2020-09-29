@@ -134,6 +134,7 @@ h3 {
     /*border: 1px solid cornflowerblue;*/
 }
 
+
 .favorites-header input {
     font-size: 1rem;
     padding: 10px;
@@ -146,15 +147,15 @@ h3 {
 }
 
 .favorites-header button{
-    color: white;
-    font-size: 1.8rem;
-    text-align: center;
-    vertical-align: center;
     width: 30px;
     height: 30px;
     background-color: #6C8189;
     border-radius: 100%;
     border: none;
+    background-position: center;
+    background-image: url("../images/plus.png");
+    background-size: 50% auto;
+    background-repeat : no-repeat;
 }
 
 .favorites-header button:hover {
@@ -176,15 +177,16 @@ h3 {
 }
 
 .city button {
-    color: white;
-    font-size: 1.6rem;
-    text-align: center;
-    vertical-align: center;
     width: 30px;
     height: 30px;
     background-color: #6C8189;
     border-radius: 100%;
     border: none;
+
+    background-position: center;
+    background-image: url("../images/cross.png");
+    background-size: 50% auto;
+    background-repeat : no-repeat;
 }
 
 .city button:hover {
