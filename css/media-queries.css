@@ -18,12 +18,10 @@
         font-size: 30pt;
     }
 
-
     h1 {
-        width: 100%;
+        font-size: 2.7rem;
     }
-
-    .update {
+    h2 {
         width: 100%;
     }
 
@@ -94,7 +92,7 @@
         align-content: space-around;
     }
 
-    header {
+    header div {
         flex-wrap: nowrap;
     }
 
@@ -139,5 +137,9 @@
     .city img {
         width: 3rem;
         height: 3rem;
+    }
+
+    .current-city img {
+        margin-right: 5rem;
     }
 }
