@@ -1,5 +1,5 @@
 
-@media only screen and (min-width : 1160px) {
+@media (min-width : 1160px) {
     .current-weather-data li {
         font-size: 1.2rem;
     }
@@ -7,18 +7,10 @@
         font-size: 1.2rem;
     }
 }
-@media only screen and (max-width : 1160px) {
-    html, body{
-        width: 95%;
-        padding: 0;
-        margin-left: auto;
-        margin-right: auto;
-        /*width: 90%;*/
 
-        font-size: 42px;
-    }
-
+@media (max-width : 1160px) {
     h1 {
+        text-align: left;
         font-size: 2.3rem;
     }
     h2 {
@@ -42,8 +34,9 @@
     }
     .current-weather-data li {
         font-size: 1rem;
-        width: 100%;
-        height: 70px;
+        width: 95%;
+        height: 1.8rem;
+
         margin-bottom: 20px;
     }
     .current-weather-data li b{
@@ -53,7 +46,8 @@
 
     .weather-data li{
         font-size: 1rem;
-        height: 70px;
+        height: 1.8rem;
+
         margin-bottom: 20px;
         vertical-align: middle;
     }
@@ -110,14 +104,9 @@
         height: 100px;
     }
 
-    header h1 {
-        width: 80%;
-    }
-
     .update-button span {
         display: none;
     }
-
 
     .update-button {
         background-image: url("../images/100.png");
@@ -125,8 +114,10 @@
         padding-top : 10px;
         padding-bottom : 10px;
         background-repeat : no-repeat;
-        width: 100px;
-        height: 100px;
+
+        background-size: 3rem 3rem;
+        width: 3rem;
+        height: 3rem;
     }
 
     .current-city img {
@@ -139,7 +130,108 @@
         height: 3rem;
     }
 
+    .city button {
+        width: 3rem;
+        height: 3rem;
+    }
+
     .current-city img {
         margin-right: 5rem;
+    }
+
+    .favorites-header button {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .favorites-header input {
+        width: 80%;
+        height: 2rem;
+    }
+}
+
+@media (min-width : 1086px) and (max-width : 1160px) {
+    h1 {
+        color: purple;
+    }
+    html, body{
+        width: 95%;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 40px;
+    }
+}
+
+@media (min-width : 920px) and (max-width : 1087px) {
+    h1 {
+        color: orange;
+    }
+    html, body{
+        width: 95%;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 32px;
+    }
+}
+
+@media (min-width : 720px) and (max-width : 920px){
+    html, body{
+        width: 95%;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        /*width: 90%;*/
+
+        font-size: 27px;
+    }
+
+    h1 {
+        color: gold;
+    }
+}
+
+@media (min-width : 550px) and (max-width : 720px){
+    h1 {
+        color: red;
+    }
+    html, body{
+        width: 95%;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        /*width: 90%;*/
+
+        font-size: 22px;
+    }
+}
+@media (min-width : 440px) and (max-width : 550px){
+    h1 {
+        color: green;
+    }
+    html, body{
+        width: 95%;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        /*width: 90%;*/
+
+        font-size: 18px;
+    }
+}
+
+@media (min-width : 320px) and (max-width : 440px){
+    h1 {
+        color: blue;
+    }
+    html, body{
+        width: 95%;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        /*width: 90%;*/
+
+        font-size: 13px;
     }
 }
