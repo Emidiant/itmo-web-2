@@ -114,7 +114,6 @@ h3 {
     font-size: 1.2rem;
     font-weight: bold;
     float: left;
-    margin-right: 30px;
 }
 
 .favorites-header {
@@ -127,10 +126,12 @@ h3 {
 }
 
 .new-city {
-    text-align: right;
     width: 370px;
-    margin: 0 10px 0 10px;
+    margin: 10px 10px 1rem 10px;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     /*border: 1px solid cornflowerblue;*/
 }
 
@@ -147,6 +148,7 @@ h3 {
 }
 
 .favorites-header button{
+    float: right;
     width: 30px;
     height: 30px;
     background-color: #6C8189;
@@ -280,7 +282,6 @@ h3 {
     font-weight: bold;
     float: left;
     font-size: 1.2rem;
-    margin-right: 30px;
 }
 
 .weather-data {
