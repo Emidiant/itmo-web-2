@@ -9,9 +9,13 @@
 }
 
 @media (max-width : 1160px) {
-    h1 {
+    header h1 {
         text-align: left;
         font-size: 2.3rem;
+    }
+
+    header div {
+        height: 3rem;
     }
     h2 {
         width: 100%;
@@ -36,8 +40,7 @@
         font-size: 1rem;
         width: 95%;
         height: 1.8rem;
-
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
     }
     .current-weather-data li b{
         font-size: 1rem;
@@ -47,8 +50,7 @@
     .weather-data li{
         font-size: 1rem;
         height: 1.8rem;
-
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
         vertical-align: middle;
     }
     .weather-data li b{
@@ -151,9 +153,6 @@
 }
 
 @media (min-width : 1086px) and (max-width : 1160px) {
-    h1 {
-        color: purple;
-    }
     html, body{
         width: 95%;
         padding: 0;
@@ -164,9 +163,6 @@
 }
 
 @media (min-width : 920px) and (max-width : 1087px) {
-    h1 {
-        color: orange;
-    }
     html, body{
         width: 95%;
         padding: 0;
@@ -186,16 +182,9 @@
 
         font-size: 27px;
     }
-
-    h1 {
-        color: gold;
-    }
 }
 
 @media (min-width : 550px) and (max-width : 720px){
-    h1 {
-        color: red;
-    }
     html, body{
         width: 95%;
         padding: 0;
@@ -207,9 +196,6 @@
     }
 }
 @media (min-width : 440px) and (max-width : 550px){
-    h1 {
-        color: green;
-    }
     html, body{
         width: 95%;
         padding: 0;
@@ -222,9 +208,6 @@
 }
 
 @media (min-width : 320px) and (max-width : 440px){
-    h1 {
-        color: blue;
-    }
     html, body{
         width: 95%;
         padding: 0;

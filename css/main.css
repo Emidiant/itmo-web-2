@@ -34,8 +34,7 @@ header div{
     justify-content: space-between;
     align-items: center;
     margin: 20px 0 20px 0;
-
-    /*border: 1px solid brown;*/
+    height: 100px;
 }
 
 main {
@@ -53,9 +52,6 @@ h2 {
     color: #698084;
     font-weight: normal;
     width: 370px;
-    margin: 0 10px 0 10px;
-
-    /*border: 1px solid blue;*/
 }
 
 .current-city-h3{
@@ -104,7 +100,7 @@ h3 {
     color: #F0FBFF;
     background-color: #A5AFB1;
     height: 20px;
-    margin: 5px 0 5px 0;
+    margin-top: 5px;
     padding: 5px 10px 5px 10px;
     vertical-align: center;
     text-align: right;
@@ -272,7 +268,7 @@ h3 {
     background-color: #A5AFB1;
     font-size: 1.2rem;
     height: 20px;
-    margin: 5px 0 5px 0;
+    margin-top: 5px;
     padding: 5px 10px 5px 10px;
     vertical-align: center;
     text-align: right;
