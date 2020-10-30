@@ -1,18 +1,5 @@
 console.log("Connected")
 
-function gettingJSON(city) {
-    const api_key = '52fd465732929bce2b208cdcf6b2c155'
-
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=' + api_key).then(function (resp) {
-        return resp.json()
-    }).then(function (data) {
-        // //Добавляем иконку погоды
-        // document.querySelector('.weather__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
-        console.log(data)
-        fillingInfo(data)
-    })
-}
-
 function windSpeed(speed) {
     var windDescription;
 
@@ -117,7 +104,7 @@ function windDirection(degree) {
 
 function cloudsType(percent) {
     var type;
-    switch (true){
+    switch (true) {
         case(percent <= 10):
             type = 'Clear sky';
             break;
@@ -134,45 +121,182 @@ function cloudsType(percent) {
     return type;
 }
 
-function fillingInfo(data) {
+function fillContent(b, p, data, i, h3, temp) {
+    h3.textContent = data.name;
+    temp.textContent = Math.round(data.main['temp']) + '\u00B0';
+
+    b[0].textContent = "Ветер";
+    b[1].textContent = "Облачность";
+    b[2].textContent = "Давление";
+    b[3].textContent = "Влажность";
+    b[4].textContent = "Координаты";
+
+    p[i].textContent = windSpeed(data.wind['speed']) + ', ' + data.wind['speed'] + ' m/s, ' + windDirection(data.wind['deg']);
+    p[i + 1].textContent = cloudsType(data.clouds['all']);
+    p[i + 2].textContent = data.main['pressure'] + ' hpa';
+    p[i + 3].textContent = data.main['humidity'] + ' %';
+    p[i + 4].textContent = '[' + data.coord['lon'] + ', ' + data.coord['lat'] + ']';
+}
+
+
+
+function gettingJSONbyCoord(lat, lon) {
+    const api_key = '52fd465732929bce2b208cdcf6b2c155'
+
+    fetch('http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=metric' + '&appid=' + api_key).then(function (resp) {
+        return resp.json()
+    }).then(function (data) {
+        // //Добавляем иконку погоды
+        // document.querySelector('.weather__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
+        fillingInfo(data)
+    })
+}
+
+function gettingJSONbyCity(city) {
+    const api_key = '52fd465732929bce2b208cdcf6b2c155'
+
+    fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=' + api_key).then(function (resp) {
+        return resp.json()
+    }).then(function (data) {
+        // //Добавляем иконку погоды
+        // document.querySelector('.weather__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
+
+        fillingInfoCity(data, city)
+
+    }).catch(err => {
+        deleteCity(city);
+        alert("Введенный город не найден");
+    })
+}
+
+function fillingInfoCity(data, city) {
     if ('content' in document.createElement('template')) {
-        var t1 = document.querySelector('#content'),
+        localStorage.setItem(city, data.name);
+        console.log(city)
+        var t1 = document.querySelector('#fav-city'),
+            temp = t1.content.querySelector("p"),
             p = t1.content.querySelectorAll("p"),
-            b = t1.content.querySelectorAll("b");
+            b = t1.content.querySelectorAll("b"),
+            h3 = t1.content.querySelector("h3");
 
-        var t2 = document.querySelector('#info'),
-            h3 = t2.content.querySelector("h3"),
-            temp = t2.content.querySelector("p");
 
-        h3.textContent = data.name;
-        temp.textContent = Math.round(data.main['temp']) + '\u00B0';
+        fillContent(b, p, data, 1, h3, temp);
 
-        p[0].textContent = windSpeed(data.wind['speed']) + ', ' + data.wind['speed'] + ' m/s, ' + windDirection(data.wind['deg']);
-        p[1].textContent = cloudsType(data.clouds['all']);
-        p[2].textContent = data.main['pressure'] + ' hpa';
-        p[3].textContent = data.main['humidity'] + '%';
-        p[4].textContent = '[' + data.coord['lon'] + ', ' + data.coord['lat'] + ']';
-
-        b[0].textContent = "Ветер";
-        b[1].textContent = "Облачность";
-        b[2].textContent = "Давление";
-        b[3].textContent = "Влажность";
-        b[4].textContent = "Координаты";
-
-        var tb = document.getElementsByTagName("lidata");
+        var tb = document.getElementsByTagName("ulcity");
         var clone = document.importNode(t1.content, true);
         tb[0].appendChild(clone);
-
-        var tb2 = document.getElementsByTagName("citydata");
-        var clone2 = document.importNode(t2.content, true);
-        tb2[0].appendChild(clone2);
     }
 }
 
-function parsing() {
-    gettingJSON('London')
+function fillingInfo(data) {
+    let i = 0;
+    if ('content' in document.createElement('template')) {
+        var t1 = document.querySelector('#content-cur'),
+            p = t1.content.querySelectorAll("p"),
+            b = t1.content.querySelectorAll("b");
+
+        var t2 = document.querySelector('#info-cur'),
+            h3 = t2.content.querySelector("h3"),
+            temp = t2.content.querySelector("p");
+
+
+        fillContent(b, p, data, 0, h3, temp);
+
+        var tb = document.getElementsByTagName("uldata");
+        if (tb[i].childElementCount > 0) {
+            while (tb[i].firstChild) {
+                tb[i].removeChild(tb[i].firstChild);
+            }
+        }
+
+        var clone = document.importNode(t1.content, true);
+        tb[i].appendChild(clone);
+
+        var tb2 = document.getElementsByTagName("citydata");
+        if (tb2[i].childElementCount > 0) {
+            while (tb2[i].firstChild) {
+                tb2[i].removeChild(tb2[i].firstChild);
+            }
+        }
+        var clone2 = document.importNode(t2.content, true);
+        tb2[i].appendChild(clone2);
+    }
 }
 
+function getCurrentCity() {
+    // const cityName = document.querySelector('#city-name');
+    // const status = document.querySelector('#status');
+
+    // cityName.textContent = '';
+
+    function success(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        gettingJSONbyCoord(Math.round(latitude * 1000) / 1000, Math.round(longitude * 1000) / 1000)
+    }
+
+    function error() {
+        gettingJSONbyCoord(-8.669786, 115.213571)
+    }
+
+    if (!navigator.geolocation) {
+    } else {
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+}
+
+function addCity() {
+    let city = document.getElementById('new-city-input').value;
+    let flag = true;
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        if (city === localStorage.getItem(key)){
+            flag = false;
+        }
+    }
+    if (localStorage.getItem(city) === null && flag)  {
+        gettingJSONbyCity(city)
+    }
+    document.getElementById('new-city-input').value = "";
+}
+
+function deleteCity(a){
+    var cityName;
+    var b;
+    var c;
+    if (typeof a === 'string'){
+        cityName = a
+    } else {
+        b = a.parentNode;
+        cityName = b.childNodes[1].textContent;
+        c = b.parentNode;
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            if (cityName === localStorage.getItem(key)){
+                localStorage.removeItem(key)
+            }
+        }
+        c.parentNode.removeChild(c);
+    }
+    localStorage.removeItem(cityName)
+
+    // for (let i = 0; i < localStorage.length; i++) {
+    //     console.log(localStorage.key(i));
+    // }
+
+}
+
+function parsing() {
+    // localStorage.clear()
+    for (let i = 0; i < localStorage.length; i++) {
+        let city = localStorage.key(i);
+        gettingJSONbyCity(city)
+    }
+}
+getCurrentCity()
+document.querySelector('#find-me').addEventListener('click', getCurrentCity);
+document.querySelector('#new-city').addEventListener('click', addCity);
+// document.querySelector('#delete').addEventListener('click', deleteCity);
 parsing()
 
 
