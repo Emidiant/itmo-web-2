@@ -1,5 +1,3 @@
-console.log("Connected")
-
 function windSpeed(speed) {
     var windDescription;
 
@@ -139,33 +137,31 @@ function fillContent(b, p, data, i, h3, temp) {
 }
 
 
-
 async function gettingJSONbyCoord(lat, lon) {
-    const api_key = '52fd465732929bce2b208cdcf6b2c155'
-
+    const api_key = '52fd465732929bce2b208cdcf6b2c155';
+    let loader = document.body.childNodes[1];
+    loader.style.display = "";
     await fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=metric' + '&appid=' + api_key)
         .then(function (resp) {
-        return resp.json()
+            return resp.json()
         })
         .then(function (data) {
-        // //Добавляем иконку погоды
-        // document.querySelector('.weather__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
-        fillingInfo(data)
+        fillingInfo(data);
+        loader.style.display = "none";
     })
 
 }
 
 function gettingJSONbyCity(city) {
-    const api_key = '52fd465732929bce2b208cdcf6b2c155'
+    let loader = document.body.childNodes[1];
+    loader.style.display = "";
+    const api_key = '52fd465732929bce2b208cdcf6b2c155';
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=' + api_key).then(function (resp) {
         return resp.json()
     }).then(function (data) {
-        // //Добавляем иконку погоды
-        // document.querySelector('.weather__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
-
         fillingInfoCity(data, city)
-
+        loader.style.display = "none";
     }).catch(err => {
         deleteCity(city);
         alert("Введенный город не найден");
@@ -223,7 +219,6 @@ function fillingInfo(data) {
 
         var tb2 = document.getElementsByTagName("citydata");
         if (tb2[i].childElementCount > 0) {
-            // icon.innerHTML = ""
             while (tb2[i].firstChild) {
                 tb2[i].removeChild(tb2[i].firstChild);
             }
@@ -234,11 +229,6 @@ function fillingInfo(data) {
 }
 
 function getCurrentCity() {
-    // const cityName = document.querySelector('#city-name');
-    // const status = document.querySelector('#status');
-
-    // cityName.textContent = '';
-
     function success(position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
@@ -271,9 +261,7 @@ function addCity() {
 }
 
 function deleteCity(a){
-    var cityName;
-    var b;
-    var c;
+    let cityName, b, c;
     if (typeof a === 'string'){
         cityName = a
     } else {
@@ -289,15 +277,9 @@ function deleteCity(a){
         c.parentNode.removeChild(c);
     }
     localStorage.removeItem(cityName)
-
-    // for (let i = 0; i < localStorage.length; i++) {
-    //     console.log(localStorage.key(i));
-    // }
-
 }
 
 function parsing() {
-    // localStorage.clear()
     for (let i = 0; i < localStorage.length; i++) {
         let city = localStorage.key(i);
         gettingJSONbyCity(city)
@@ -306,9 +288,4 @@ function parsing() {
 getCurrentCity()
 document.querySelector('#find-me').addEventListener('click', getCurrentCity);
 document.querySelector('#new-city').addEventListener('click', addCity);
-// document.querySelector('#delete').addEventListener('click', deleteCity);
 parsing()
-
-
-// http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
-// api.openweathermap.org/data/2.5/forecast?id=524901&appid={$api_key}

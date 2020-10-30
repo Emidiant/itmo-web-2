@@ -293,3 +293,32 @@ h3 {
 /*.favorites-cities li:last-child{*/
 /*    justify-content: space-evenly;*/
 /*}*/
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: #fff;
+    z-index: 1001;
+}
+
+.preloader-image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 110px;
+    height: 110px;
+    margin-top: -32px;
+    margin-left: -32px;
+    background: url('../images/preloader.gif') no-repeat 50% 50%; /*расположение (url) изображения gif и др. параметры*/
+}
+
+.preloader.hide{
+    /*transition: 0.3s opacity;*/
+    /*opacity: 0.2;*/
+    display: none;
+}
+
