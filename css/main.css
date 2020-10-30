@@ -116,6 +116,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     margin: 20px 0 20px 0;
 
     /*border: 1px solid goldenrod;*/
@@ -161,12 +162,12 @@ h3 {
     cursor: pointer;
 }
 
+
 .city {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    /*border: 1px solid cornflowerblue;*/
+    flex-wrap: nowrap;
 }
 
 .city p {
@@ -244,7 +245,7 @@ h3 {
     /*border: 1px solid red;*/
 }
 
-.current-city span {
+.current-city p {
     align-self: center;
 
     /*border: 1px solid blue;*/

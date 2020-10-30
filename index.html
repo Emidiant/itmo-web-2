@@ -12,117 +12,70 @@
     <h1>Прогноз погоды</h1>
     <div>
         <h2>Погода здесь</h2>
-        <div class="update"><button class="update-button"><span>Обновить геологацию</span></button></div>
+        <div class="update" id = "find-me"><button class="update-button"><span>Обновить геологацию</span></button></div>
     </div>
 
 </header>
 <main>
     <div class="current-city-data">
-        <div class="current-city">
-            <h3 class="current-city-h3">Saint Petersburg</h3>
-            <div>
-                <img src="images/icon-clouds.png" alt="cloudy">
-                <span class="current-temp">8&degC</span>
-            </div>
-        </div>
+        <citydata class="current-city">
+
+        </citydata>
         <div class="current-city-li">
-            <ul class="current-weather-data">
-                <li><p><b>Ветер</b> Moderate breeze, 6.0 m/s, North-northwest</p></li>
-                <li><p><b>Облачность</b> Broken clouds</p></li>
-                <li><p><b>Давление</b> 1013 hpa</p></li>
-                <li><p><b>Влажность</b> 52%</p></li>
-                <li><p><b>Координаты</b> [59.88, 30.42]</p></li>
-            </ul>
+            <uldata class="current-weather-data">
+            </uldata>
         </div>
     </div>
 
+    <template id="info-cur">
+        <h3 class="current-city-h3"></h3>
+        <div>
 
+            <p class="current-temp"></p>
+        </div>
+    </template>
+
+    <template id="content-cur">
+        <li><b></b><p></p></li>
+        <li><b></b><p></p></li>
+        <li><b></b><p></p></li>
+        <li><b></b><p></p></li>
+        <li><b></b><p></p></li>
+    </template>
 
     <div class="favorites-header">
         <h2>Избранное</h2>
         <div class="new-city">
-            <input type="text" value="Добавить новый город">
-            <button></button>
+            <input type="text" placeholder="Добавить новый город" id="new-city-input">
+            <button id="new-city"></button>
         </div>
 
     </div>
 
-    <ul class="favorites-cities" id="favorites">
+    <ulcity class="favorites-cities" id="favorites">
+
+    </ulcity>
+
+    <template id="fav-city">
         <li>
             <div class="city">
-                <h3>Moscow</h3>
-                <p>5&degC</p>
-                <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
-                <button></button>
+                <h3 id="cityname"></h3>
+                <p></p>
+                <div id="imgcity"></div>
+<!--                <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">-->
+                <button onclick="deleteCity(this)"></button>
             </div>
             <ul class="weather-data">
-                <li><p><b>Ветер</b> Moderate breeze, 6.0 m/s, North-northwest</p></li>
-                <li><p><b>Облачность</b> Broken clouds</p></li>
-                <li><p><b>Давление</b> 1013 hpa</p></li>
-                <li><p><b>Влажность</b> 52%</p></li>
-                <li><p><b>Координаты</b> [59.88, 30.42]</p></li>
+                <li><b></b><p></p></li>
+                <li><b></b><p></p></li>
+                <li><b></b><p></p></li>
+                <li><b></b><p></p></li>
+                <li><b></b><p></p></li>
             </ul>
         </li>
-        <li>
-            <div class="city">
-                <h3>Helsinki</h3>
-                <p>3&degC</p>
-                <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
-                <button></button>
-            </div>
-            <ul class="weather-data">
-                <li><p><b>Ветер</b> Moderate breeze, 6.0 m/s, North-northwest</p></li>
-                <li><p><b>Облачность</b> Broken clouds</p></li>
-                <li><p><b>Давление</b> 1013 hpa</p></li>
-                <li><p><b>Влажность</b> 52%</p></li>
-                <li><p><b>Координаты</b> [59.88, 30.42]</p></li>
-            </ul>
-        </li>
-        <li>
-            <div class="city">
-                <h3>Moscow</h3>
-                <p>5&degC</p>
-                <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
-                <button></button>
-            </div>
-            <ul class="weather-data">
-                <li><p><b>Ветер</b> Moderate breeze, 6.0 m/s, North-northwest</p></li>
-                <li><p><b>Облачность</b> Broken clouds</p></li>
-                <li><p><b>Давление</b> 1013 hpa</p></li>
-                <li><p><b>Координаты</b> [59.88, 30.42]</p></li>
-            </ul>
-        </li>
-        <li>
-            <div class="city">
-                <h3>Helsinki</h3>
-                <p>3&degC</p>
-                <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
-                <button></button>
-            </div>
-            <ul class="weather-data">
-            <li><p><b>Ветер</b> Moderate breeze, 6.0 m/s, North-northwest</p></li>
-            <li><p><b>Облачность</b> Broken clouds</p></li>
-            <li><p><b>Давление</b> 1013 hpa</p></li>
-            <li><p><b>Влажность</b> 52%</p></li>
-            <li><p><b>Координаты</b> [59.88, 30.42]</p></li>
-        </ul>
-        </li>
-        <li>
-            <div class="city">
-                <h3>Helsinki</h3>
-                <p>3&degC</p>
-                <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">
-                <button></button>
-            </div>
-            <ul class="weather-data">
-                <li><p><b>Ветер</b> Moderate breeze, 6.0 m/s, North-northwest</p></li>
-                <li><p><b>Облачность</b> Broken clouds</p></li>
-                <li><p><b>Давление</b> 1013 hpa</p></li>
-                <li><p><b>Влажность</b> 52%</p></li>
-                <li><p><b>Координаты</b> [59.88, 30.42]</p></li>
-            </ul>
-        </li>
-    </ul>
+    </template>
+
+    <script src="js/weather_data.js"></script>
 </main>
 </body>
 </html>
