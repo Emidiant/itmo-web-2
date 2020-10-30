@@ -177,10 +177,12 @@ function fillingInfoCity(data, city) {
             temp = t1.content.querySelector("p"),
             p = t1.content.querySelectorAll("p"),
             b = t1.content.querySelectorAll("b"),
-            h3 = t1.content.querySelector("h3");
-
+            h3 = t1.content.querySelector("h3"),
+            icon = t1.content.querySelector("#imgcity");
 
         fillContent(b, p, data, 1, h3, temp);
+        console.log(data)
+        icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png " width="48" height="48" alt="${data.weather[0]['main']}">`;
 
         var tb = document.getElementsByTagName("ulcity");
         var clone = document.importNode(t1.content, true);
@@ -191,16 +193,22 @@ function fillingInfoCity(data, city) {
 function fillingInfo(data) {
     let i = 0;
     if ('content' in document.createElement('template')) {
+
+        var t2 = document.querySelector('#info-cur'),
+            h3 = t2.content.querySelector("h3"),
+            temp = t2.content.querySelector("p"),
+            icon = t2.content.querySelector("div");
+
         var t1 = document.querySelector('#content-cur'),
             p = t1.content.querySelectorAll("p"),
             b = t1.content.querySelectorAll("b");
 
-        var t2 = document.querySelector('#info-cur'),
-            h3 = t2.content.querySelector("h3"),
-            temp = t2.content.querySelector("p");
-
-
         fillContent(b, p, data, 0, h3, temp);
+
+
+        icon.removeChild(icon.firstChild);
+        icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png ">` + icon.innerHTML;
+
 
         var tb = document.getElementsByTagName("uldata");
         if (tb[i].childElementCount > 0) {
@@ -214,6 +222,7 @@ function fillingInfo(data) {
 
         var tb2 = document.getElementsByTagName("citydata");
         if (tb2[i].childElementCount > 0) {
+            // icon.innerHTML = ""
             while (tb2[i].firstChild) {
                 tb2[i].removeChild(tb2[i].firstChild);
             }

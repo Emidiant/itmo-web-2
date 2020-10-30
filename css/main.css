@@ -116,6 +116,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     margin: 20px 0 20px 0;
 
     /*border: 1px solid goldenrod;*/
