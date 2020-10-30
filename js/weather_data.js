@@ -140,22 +140,25 @@ function fillContent(b, p, data, i, h3, temp) {
 
 
 
-function gettingJSONbyCoord(lat, lon) {
+async function gettingJSONbyCoord(lat, lon) {
     const api_key = '52fd465732929bce2b208cdcf6b2c155'
 
-    fetch('http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=metric' + '&appid=' + api_key).then(function (resp) {
+    await fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=metric' + '&appid=' + api_key)
+        .then(function (resp) {
         return resp.json()
-    }).then(function (data) {
+        })
+        .then(function (data) {
         // //Добавляем иконку погоды
         // document.querySelector('.weather__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
         fillingInfo(data)
     })
+
 }
 
 function gettingJSONbyCity(city) {
     const api_key = '52fd465732929bce2b208cdcf6b2c155'
 
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=' + api_key).then(function (resp) {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=' + api_key).then(function (resp) {
         return resp.json()
     }).then(function (data) {
         // //Добавляем иконку погоды
@@ -172,7 +175,6 @@ function gettingJSONbyCity(city) {
 function fillingInfoCity(data, city) {
     if ('content' in document.createElement('template')) {
         localStorage.setItem(city, data.name);
-        console.log(city)
         var t1 = document.querySelector('#fav-city'),
             temp = t1.content.querySelector("p"),
             p = t1.content.querySelectorAll("p"),
@@ -181,7 +183,6 @@ function fillingInfoCity(data, city) {
             icon = t1.content.querySelector("#imgcity");
 
         fillContent(b, p, data, 1, h3, temp);
-        console.log(data)
         icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png " width="48" height="48" alt="${data.weather[0]['main']}">`;
 
         var tb = document.getElementsByTagName("ulcity");
