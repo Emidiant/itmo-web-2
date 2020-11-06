@@ -12,12 +12,16 @@
     <h1>Прогноз погоды</h1>
     <div>
         <h2>Погода здесь</h2>
-        <div class="update" id = "find-me"><button class="update-button"><span>Обновить геологацию</span></button></div>
+        <div class="update" id = "find-me"><button class="update-button"><span>Обновить геолокацию</span></button></div>
     </div>
-
 </header>
+
 <main>
     <div class="current-city-data">
+        <div class="preloader">
+            <div class="preloader-image"></div>
+        </div>
+
         <citydata class="current-city">
 
         </citydata>
@@ -45,11 +49,11 @@
 
     <div class="favorites-header">
         <h2>Избранное</h2>
-        <div class="new-city">
-            <input type="text" placeholder="Добавить новый город" id="new-city-input">
-            <button id="new-city"></button>
-        </div>
 
+        <form class="new-city" name="addCity" method="get">
+            <input type="text" placeholder="Добавить новый город" name="new-city-input">
+            <input type="submit" class="button" id="new-city" value="">
+        </form>
     </div>
 
     <ulcity class="favorites-cities" id="favorites">
@@ -58,11 +62,13 @@
 
     <template id="fav-city">
         <li>
+<!--            <div class="preloader">-->
+<!--                <div class="preloader-image"></div>-->
+<!--            </div>-->
             <div class="city">
                 <h3 id="cityname"></h3>
                 <p></p>
                 <div id="imgcity"></div>
-<!--                <img src="images/icon-clouds.png" width="48" height="48" alt="cloudy">-->
                 <button onclick="deleteCity(this)"></button>
             </div>
             <ul class="weather-data">
