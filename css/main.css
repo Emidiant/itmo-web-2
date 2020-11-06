@@ -144,7 +144,7 @@ h3 {
     margin-right: 20px;
 }
 
-.favorites-header button{
+.favorites-header .button{
     float: right;
     width: 30px;
     height: 30px;
@@ -157,7 +157,7 @@ h3 {
     background-repeat : no-repeat;
 }
 
-.favorites-header button:hover {
+.favorites-header .button:hover {
     background-color: #A5AFB1;
     cursor: pointer;
 }
@@ -295,11 +295,9 @@ h3 {
 /*}*/
 
 .preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
     overflow: hidden;
     background: #fff;
     z-index: 1001;
@@ -307,12 +305,12 @@ h3 {
 
 .preloader-image {
     position: relative;
-    top: 50%;
-    left: 50%;
+    left: 35%;
+    top: 20%;
     width: 110px;
     height: 110px;
-    margin-top: -32px;
-    margin-left: -32px;
+    /*margin-top: -32px;*/
+    /*margin-left: -32px;*/
     background: url('../images/preloader.gif') no-repeat 50% 50%; /*расположение (url) изображения gif и др. параметры*/
 }
 
