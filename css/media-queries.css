@@ -9,6 +9,13 @@
 }
 
 @media (max-width : 1160px) {
+    .preloader-image{
+        left: 45%;
+    }
+
+    .main-loader {
+        left: 0;
+    }
     header h1 {
         text-align: left;
         font-size: 2.3rem;
@@ -62,7 +69,7 @@
         width: 100%;
     }
 
-    .city button,.favorites-header button {
+    .city button,.favorites-header .button {
         width: 80px;
         height: 80px;
     }
@@ -138,7 +145,8 @@
     }
 
     .current-city img {
-        margin-right: 5rem;
+        width: 5rem;
+        height: 5rem;
     }
 
     .favorites-header button {
