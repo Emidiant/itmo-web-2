@@ -141,6 +141,20 @@ function fillContent(b, p, data, i, h3, temp) {
 
 async function gettingJSONbyCoord(lat, lon) {
     let loader = document.getElementsByClassName('preloader')[0];
+
+    var tb = document.getElementsByTagName("uldata")[0];
+    if (tb.childElementCount > 0) {
+        while (tb.firstChild) {
+            tb.removeChild(tb.firstChild);
+        }
+    }
+    var tb2 = document.getElementsByTagName("citydata")[0];
+    if (tb2.childElementCount > 0) {
+        while (tb2.firstChild) {
+            tb2.removeChild(tb2.firstChild);
+        }
+    }
+
     const api_key = '52fd465732929bce2b208cdcf6b2c155';
     loader.style.display = "";
     await fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=metric' + '&appid=' + api_key)
@@ -148,9 +162,9 @@ async function gettingJSONbyCoord(lat, lon) {
             return resp.json()
         })
         .then(function (data) {
-        fillingInfo(data);
-        loader.style.display = "none";
-    })
+            fillingInfo(data);
+            loader.style.display = "none";
+        })
 
 }
 
@@ -249,21 +263,10 @@ function fillingInfo(data) {
 
 
         var tb = document.getElementsByTagName("uldata");
-        if (tb[i].childElementCount > 0) {
-            while (tb[i].firstChild) {
-                tb[i].removeChild(tb[i].firstChild);
-            }
-        }
-
         var clone = document.importNode(t1.content, true);
         tb[i].appendChild(clone);
 
         var tb2 = document.getElementsByTagName("citydata");
-        if (tb2[i].childElementCount > 0) {
-            while (tb2[i].firstChild) {
-                tb2[i].removeChild(tb2[i].firstChild);
-            }
-        }
         var clone2 = document.importNode(t2.content, true);
         tb2[i].appendChild(clone2);
     }
@@ -359,4 +362,3 @@ document.forms.namedItem('addCity').addEventListener('submit', (event) => {
 })
 // localStorage.clear()
 parsing()
-
