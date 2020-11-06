@@ -19,7 +19,7 @@
 <main>
     <div class="current-city-data">
         <div class="preloader">
-            <div class="preloader-image"></div>
+            <div class="main-loader"></div>
         </div>
 
         <citydata class="current-city">
@@ -60,11 +60,16 @@
 
     </ulcity>
 
+    <template id="fav-city-loader">
+        <li>
+            <div class="preloader">
+                <div class="preloader-image"></div>
+            </div>
+        </li>
+    </template>
+
     <template id="fav-city">
         <li>
-<!--            <div class="preloader">-->
-<!--                <div class="preloader-image"></div>-->
-<!--            </div>-->
             <div class="city">
                 <h3 id="cityname"></h3>
                 <p></p>
